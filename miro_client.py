@@ -84,7 +84,7 @@ def create_sticky_note(text, x, y, board_id=None):
 
     response = requests.post(url, headers=headers, json=payload)
 
-    if response.status_code != 200:
+    if response.status_code >= 300:
         raise RuntimeError(
             f"Miro API request failed with status code {response.status_code}: {response.text}"
         )
@@ -114,7 +114,7 @@ def create_text_item(text, x, y, board_id=None):
 
     response = requests.post(url, headers=headers, json=payload)
 
-    if response.status_code != 200:
+    if response.status_code >= 300:
         raise RuntimeError(
             f"Miro API request failed with status code {response.status_code}: {response.text}"
         )

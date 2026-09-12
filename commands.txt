@@ -1,0 +1,2 @@
+python bridge.py write --plan plans/test_plan.json
+python bridge.py read
